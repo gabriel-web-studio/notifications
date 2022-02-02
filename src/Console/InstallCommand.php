@@ -44,12 +44,15 @@ class InstallCommand extends Command
         }
 
         (new Filesystem)->ensureDirectoryExists(base_path('config'));
-        (new Filesystem)->copy(__DIR__ . '/../config/gabrielwebstudio.php', base_path('config/input.php'));
+        (new Filesystem)->copy(__DIR__ . '/../config/gws.php', base_path('config/gws.php'));
+
+        (new Filesystem)->ensureDirectoryExists(app_path('Helpers'));
+        (new Filesystem)->copy(__DIR__ . '/../../stubs/Helpers/Notifications.php', app_path('Helpers/Notifications.php'));
 
         (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
         (new Filesystem)->copy(__DIR__ . '/../../resources/components/toast-notification.blade.php', resource_path('views/components/toast-notification.blade.php'));
 
-        $this->info('Inputs scaffolding installed successfully.');
+        $this->info('Notifications scaffolding installed successfully.');
 
         if(!$this->option('base')) {
             $this->comment('Please execute the "npm install && npm run dev" command to build your assets.');
