@@ -1,0 +1,31 @@
+{
+    "name": "gabriel-web-studio/notifications",
+    "description": "Creating a notification system for Laravel based on TailwindCss and AlpineJs",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "GabrielWebStudio\\Input\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel VANROY",
+            "email": "contact@gabriel-web-studio.fr"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/validation": "^8.42|^9.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GabrielWebStudio\\Notifications\\NotificationServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
